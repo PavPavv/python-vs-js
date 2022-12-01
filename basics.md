@@ -643,6 +643,84 @@ while i < 3:
   i += 1
 ```
 
+## Tuples
+
+Tuples are used to store multiple items in a single variable. Tuple is one of 4 built-in data types in Python used to store collections of data, the other 3 are **List**, **Set**, and **Dictionary**. A tuple is a collection which is ordered and unchangeable. Tuple items are ordered, unchangeable, and allow duplicate values. Tuple items are indexed.
+
+To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple. Tuple items can be of any data type.
+
+It is also possible to use the **tuple()** constructor to make a tuple.
+
+```python
+t = ('a', 'b', 'c', True, 100)
+print(len(t)) # 5
+thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
+
+# You can access tuple items by referring to the index number, inside square brackets:
+t[0]  # 'a'
+t[-1] # 100
+t[2:4]  # 'c',True
+
+# To determine if a specified item is present in a tuple use the in keyword:
+thistuple = ("apple", "banana", "cherry")
+if "apple" in thistuple:
+  print("Yes, 'apple' is in the fruits tuple") 
+
+# But there is a workaround. You can convert the tuple into a list, change the list, and convert the list back into a tuple.
+x = ("apple", "banana", "cherry")
+y = list(x)
+y[1] = "kiwi"
+x = tuple(y)
+print(x)
+
+# Add tuple to a tuple. You are allowed to add tuples to tuples, so if you want to add one item, (or many), create a new tuple with the item(s), and add it to the existing tuple:
+thistuple = ("apple", "banana", "cherry")
+y = ("orange",)
+thistuple += y
+print(thistuple)
+```
+
+The **del** keyword can delete the tuple completely:
+
+```python
+thistuple = ("apple", "banana", "cherry")
+del thistuple
+print(thistuple) #this will raise an error because the tuple no longer exists 
+```
+
+In Python, we are also allowed to extract the values back into variables. This is called "unpacking":
+
+```python
+fruits = ("apple", "banana", "cherry")
+(green, yellow, red) = fruits
+```
+
+If the number of variables is less than the number of values, you can add an * to the variable name and the values will be assigned to the variable as a list:
+
+```python
+ fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+(green, yellow, *red) = fruits
+print(green)
+print(yellow)
+print(red)
+```
+
+If you want to multiply the content of a tuple a given number of times, you can use the * operator:
+
+```python
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+print(mytuple) #  "apple", "banana", "cherry", "apple", "banana", "cherry"
+```
+
+Python has two built-in methods that you can use on tuples.
+
+```python
+fruits = ("apple", "banana", "cherry")
+print(fruits.count('banana')) # Returns the number of times a specified value occurs in a tuple
+print(fruits.index('banana')) # 2
+```
+
 ## Modules
 
 ES6
