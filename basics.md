@@ -721,6 +721,66 @@ print(fruits.count('banana')) # Returns the number of times a specified value oc
 print(fruits.index('banana')) # 2
 ```
 
+## Sets
+
+A set is a collection which is unordered, unchangeable, and unindexed. Sets cannot have two items with the same value.
+To add one item to a set use the **add()** method.
+To add items from another set into the current set, use the **update()** method. The object in the **update()** method does not have to be a set, it can be any iterable object (tuples, lists, dictionaries etc.).
+
+To remove an item in a set, use the **remove()**, or the **discard()** method. If the item to remove does not exist, **remove()** will raise an error, but **discard()** won't.
+The **clear()** method empties the set.
+The **del** keyword will delete the set completely.
+
+```python
+def setsTest():
+  st = {'one','two','three'}
+  print(st)
+  print(len(st))
+
+  st1 = set(('four','five','six'))
+  st1.add('seven')
+  print(type(st1))
+
+  for x in st1:
+    print('item ' + x)
+
+  st2 = {'test'}
+  st2.update(st1)
+  print(st)
+  print(st1)
+  print(st2)
+  st2.discard('test')
+  st2.clear()
+  del st2
+setsTest()
+```
+
+You cannot access items in a set by referring to an index or a key.
+
+The union() method returns a new set with all items from both sets:
+
+```python
+st1 = {'one','two'}
+st2 = {'three','four'}
+st3 = st1.union(st2)
+```
+
+The **intersection_update()** method will keep only the items that are present in both sets.
+
+```python
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+x.intersection_update(y)
+```
+
+The **symmetric_difference_update()** method will keep only the elements that are NOT present in both sets.
+
+```python
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+x.symmetric_difference_update(y)
+```
+
 ## Modules
 
 ES6
