@@ -1,25 +1,21 @@
-def test():
-  s = 'Hello, world!'
-  print(s)
-test()
+# 1
+def firstLeft(arr,target):
+  for el in arr:
+    if el == target:
+      return arr.index(el)
+  return -1
+print(firstLeft([1,2,3,1,2,3],3))
 
-def setsTest():
-  st = {'one','two','three'}
-  print(st)
-  print(len(st))
+# 2
+def firstRight(arr,target):
+  result = -1
+  for i, el in enumerate(arr):
+    if el == target:
+      result = i
+  return result
+print(firstRight([1,2,3,1,2,3],3))
 
-  st1 = set(('four','five','six'))
-  st1.add('seven')
-  print(type(st1))
-
-  for x in st1:
-    print('item ' + x)
-
-  st2 = {'test'}
-  st2.update(st1)
-  print(st)
-  print(st1)
-  print(st2)
-  st2.discard('test')
-  st2.clear()
-setsTest()
+# 3
+def isPalindrome(s):
+  return s.lower() == s.lower()[::-1]
+print(isPalindrome('Anna'))

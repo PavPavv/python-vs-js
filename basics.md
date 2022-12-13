@@ -590,7 +590,7 @@ print(arr1)  #  [3,4,10,1,0]
 
 ### Loops
 
-### For
+#### For
 
 ES6
 
