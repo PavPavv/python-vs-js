@@ -1,3 +1,5 @@
+import re
+
 # 1
 def firstLeft(arr,target):
   for el in arr:
@@ -68,4 +70,14 @@ def squareNum(n):
     result += format(squareNum)
   return result
 print(squareNum(25))  # 425
+
+# 9
+# import re
+def replaceAll(s, ch):
+  result = re.sub(ch, '', s)
+  return result
+print(replaceAll('te###st', '#'))  # 'test'
+
+# 10
+
 
