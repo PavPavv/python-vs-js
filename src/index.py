@@ -79,5 +79,30 @@ def replaceAll(s, ch):
 print(replaceAll('te###st', '#'))  # 'test'
 
 # 10
+def findRepeat(a):
+  result = []
+  obj = {}
+  for i, n in enumerate(a):
+    obj[n] = i
+  for n in a:
+    if a.index(n) != obj[n]:
+      result.append(n)
+  return result
+print(findRepeat([1,2,3,4,5,6,7,3,8,9]))
 
+# 11
+def findRepeats(a):
+  result = []
+  cache = {}
+  for n in a:
+    if n in cache:
+      cache[n] += 1
+    else:
+      cache[n] = 1
+  for n in cache:
+    if cache[n] > 1:
+      a = [n for x in range(cache[n])]
+      result.append(a)
+  return result
+print(findRepeats([1,2,3,4,5,3,6,7,5,8,9,5]))  # [[3,3],[5,5,5]]
 
