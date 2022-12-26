@@ -781,6 +781,51 @@ y = {"google", "microsoft", "apple"}
 x.symmetric_difference_update(y)
 ```
 
+## Functions
+
+In Python a function is defined using the **def** keyword. To call a function, use the function name followed by parenthesis. If you do not know how many arguments that will be passed into your function, add a * before the parameter name in the function definition.
+
+```python
+def my_function(*kids):
+  print("The youngest child is " + kids[2])
+my_function("Emil", "Tobias", "Linus")
+```
+
+If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function definition. This way the function will receive a dictionary of arguments, and can access the items accordingly:
+
+```python
+def my_function(**kid):
+  print("His last name is " + kid["lname"])
+my_function(fname = "Tobias", lname = "Refsnes")
+```
+
+The following example shows how to use a default parameter value. If we call the function without argument, it uses the default value:
+
+```python
+def my_function(country = "Norway"):
+  print("I am from " + country)
+my_function("Sweden")
+my_function("India")
+my_function()
+my_function("Brazil")
+```
+
+## Lambdas
+
+A lambda function is a small anonymous function. A lambda function can take any number of arguments, but can only have one expression. Use lambda functions when an anonymous function is required for a short period of time.
+
+```python
+x = lambda a : a + 10
+print(x(5))
+```
+
+```python
+def myfunc(n):
+  return lambda a : a * n
+mytripler = myfunc(3)
+print(mytripler(11))
+```
+
 ## Modules
 
 ES6

@@ -106,3 +106,21 @@ def findRepeats(a):
   return result
 print(findRepeats([1,2,3,4,5,3,6,7,5,8,9,5]))  # [[3,3],[5,5,5]]
 
+# 12
+def countRepeatsInRange(a,l,r,target):
+  counter = 0
+  for x in a[l:r]:
+    if x == target:
+      counter += 1
+  return counter
+print(countRepeatsInRange[1,2,3,4,5,3,6,7,5,8,9,5], 2, 7, 3) #  2
+
+# 13
+def isTargetSum(arr, targetSum):
+  for a in arr:
+    for b in arr:
+      if a + b == targetSum:
+        return True
+  return False
+print(isTargetSum([1,2,3,4,5,6,7], 5)) #  True
+
