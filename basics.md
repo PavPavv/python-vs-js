@@ -826,6 +826,133 @@ mytripler = myfunc(3)
 print(mytripler(11))
 ```
 
+## Dictionaries
+
+Dictionaries are used to store data values in key:value pairs. A dictionary is a collection which is ordered*, changeable and do not allow duplicates. The values in dictionary items can be of any data type.
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964,
+}
+print(thisdict)
+print(len(thisdict))  # 3
+print(type(thisdict)) # <class 'dict'>
+```
+
+It is also possible to use the dict() constructor to make a dictionary.
+
+```python
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)
+```
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+x = thisdict["model"]
+y = thisdict.get("year")
+k = thisdict.keys() # method will return a list of all the keys in the dictionary.
+v = thisdict.values() # method will return a list of all the values in the dictionary.
+a = thisdict.items()  # method will return each item in a dictionary, as tuples in a list.
+# dict_items([('brand', 'Ford'), ('model', 'Mustang'), ('year', 1964)])
+```
+
+To determine if a specified key is present in a dictionary use the **in** keyword:
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+if "model" in thisdict:
+  print("Yes, 'model' is one of the keys in the thisdict dictionary")
+```
+
+Update Dictionary
+
+The **update()** method will update the dictionary with the items from a given argument. If the item does not exist, the item will be added.
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["year"] = 2018
+thisdict.update({"year": 2020})
+```
+
+The **pop()** method removes the item with the specified key name.
+The **popitem()** method removes the last inserted item (in versions before 3.7, a random item is removed instead).
+The **del** keyword removes the item with the specified key name.
+The **clear()** method empties the dictionary.
+The **del** keyword can also delete the dictionary completely.
+
+```python
+hisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.pop("model")
+thisdict.popitem()
+del thisdict["year"]
+print(thisdict)
+thisdict.clear()
+del thisdict
+```
+
+### Loop Through a Dictionary
+
+```python
+for x in thisdict:
+  print(x)
+
+for x in thisdict:
+  print(thisdict[x])
+
+for x in thisdict.values():
+  print(x)
+
+for x in thisdict.keys():
+  print(x)
+
+for x, y in thisdict.items():
+  print(x, y)
+```
+
+### Copy a Dictionary
+
+Make a copy of a dictionary with the **copy()** method.
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = thisdict.copy()
+print(mydict)
+```
+
+Make a copy of a dictionary with the **dict()** function.
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = dict(thisdict)
+print(mydict)
+```
+
 ## Modules
 
 ES6

@@ -124,3 +124,44 @@ def isTargetSum(arr, targetSum):
   return False
 print(isTargetSum([1,2,3,4,5,6,7], 5)) #  True
 
+# 14
+def test(*args):
+  result = ""
+  for x in args[1:]:
+    result += "" + args[0] + format(x)
+  return result
+print(test('!',4,-10,34,0))
+
+# 15
+def isObjEmpty(obj):
+  if len(obj) > 0:
+    return False
+  return True
+print(isObjEmpty({})) # True
+
+# 16
+def test(arr):
+  return max(arr)
+print(test([3,5,2,1,3,7,66,8,9,4,100,45]))
+
+def test1(arr):
+  maxVal = arr[0]
+  for val in arr:
+    if val > maxVal:
+      maxVal = val
+  return maxVal
+print(test1([3,5,2,1,3,7,66,8,9,4,100,45]))
+
+# 17
+def findUniqueAllSums(arr, target):
+  result = []
+  cache = {}
+  for x in arr:
+    cache[x] = 1
+  for n in cache:
+    secondNum = target - n
+    if n + secondNum == target:
+      if secondNum > n:
+        result.append([n, secondNum])
+  return result  
+print(test([1,2,3,4,5,6], 6))
