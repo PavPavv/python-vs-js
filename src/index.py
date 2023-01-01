@@ -140,20 +140,20 @@ def isObjEmpty(obj):
 print(isObjEmpty({})) # True
 
 # 16
-def test(arr):
+def findMax(arr):
   return max(arr)
-print(test([3,5,2,1,3,7,66,8,9,4,100,45]))
+print(findMax([3,5,2,1,3,7,66,8,9,4,100,45]))
 
-def test1(arr):
+def findMax(arr):
   maxVal = arr[0]
   for val in arr:
     if val > maxVal:
       maxVal = val
   return maxVal
-print(test1([3,5,2,1,3,7,66,8,9,4,100,45]))
+print(findMax([3,5,2,1,3,7,66,8,9,4,100,45]))
 
 # 17
-def findUniqueAllSums(arr, target):
+def findAllUniqueSums(arr, target):
   result = []
   cache = {}
   for x in arr:
@@ -164,4 +164,25 @@ def findUniqueAllSums(arr, target):
       if secondNum > n:
         result.append([n, secondNum])
   return result  
-print(test([1,2,3,4,5,6], 6))
+print(findAllUniqueSums([1,2,3,4,5,6], 6))
+
+# 18
+def findShortestStr(arr):
+  minWord = arr[0]
+  for word in arr:
+    if len(word) < len(minWord):
+      minWord = word
+  return minWord
+print(findShortestStr(['ab', 'a', 'abc']))  # 'a'
+
+# 19
+def groupAnagrams(arr):
+  cache = {}
+  for word in arr:
+    sortedWord = ''.join(sorted(word))
+    if sortedWord in cache:
+      cache[sortedWord].append(word)
+    else:
+      cache[sortedWord] = [word]
+  return list(cache.values())
+print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))  # [["bat"],["nat","tan"],["ate","eat","tea"]]
