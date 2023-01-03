@@ -125,12 +125,12 @@ def isTargetSum(arr, targetSum):
 print(isTargetSum([1,2,3,4,5,6,7], 5)) #  True
 
 # 14
-def test(*args):
+def argsToStr(*args):
   result = ""
   for x in args[1:]:
     result += "" + args[0] + format(x)
   return result
-print(test('!',4,-10,34,0))
+print(argsToStr('!',4,-10,34,0))
 
 # 15
 def isObjEmpty(obj):
@@ -186,3 +186,21 @@ def groupAnagrams(arr):
       cache[sortedWord] = [word]
   return list(cache.values())
 print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))  # [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+# 20
+def findPopularChar(str):
+  result = ''
+  cache = {}
+  counter = 0
+
+  for char in str:
+    if char in cache:
+      cache[char] += 1
+    else:
+      cache[char] = 1
+  for char in cache:
+    if cache[char] > counter:
+      counter = cache[char]
+      result = char
+  return result
+print(findPopularChar('ababa'))  # 'a'
