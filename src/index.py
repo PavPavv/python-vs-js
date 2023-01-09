@@ -230,3 +230,94 @@ def findMinEven(arr):
   return result
 print(findMinEven([10,-2,1,2,3,4,5]))
 print(findMinEven([10,12,1,2,3,4,5]))
+
+# 23
+def count(n):
+  counter = n or 0
+  def increment():
+    nonlocal counter
+    counter += 1
+    return counter
+  return increment
+
+c1 = count(100)
+c1()
+c1()
+c1()
+c1()
+c1()
+c1()
+print(c1())
+
+# 24
+def fib(n):
+  if n < 2:
+    return n
+  return fib(n - 2) + fib(n - 1)
+print(fib(0)) # 0
+print(fib(1)) # 1
+print(fib(4)) # 3
+print(fib(5)) # 5
+print(fib(9)) # 34
+print(fib(11))  # 89
+
+def noRecFib(n):
+  cache = [0,1]
+  if (n > 1):
+    for i in range(2,n+1):
+      prevPrevNum = cache[i - 2]
+      prevNum = cache[i - 1]
+      cache.append(prevPrevNum+prevNum)
+  return cache[n]
+print(noRecFib(0)) # 0
+print(noRecFib(1)) # 1
+print(noRecFib(4)) # 3
+print(noRecFib(5)) # 5
+print(noRecFib(9)) # 34
+print(noRecFib(11))  # 89
+
+# 25
+def findAllUniqueSums(arr,target):
+  result = []
+  for i in range(len(arr)):
+    for j in range(1,len(arr)):
+      if (arr[i] + arr[j] == target):
+        if (arr[i] > arr[j]):
+          result.append([arr[i], arr[j]])
+  return result
+print(findAllUniqueSums([3,5,300,1,7,4,-18,2,10,-5,23,11], 5))
+
+def findAllUniqueSums1(arr,target):
+  result = []
+  cache = {}
+  for i in range(len(arr)):
+    cache[arr[i]] = arr[i]
+  for key in cache:
+    secondNum = target - cache[key]
+    if cache[key]+secondNum == target:
+      if secondNum > cache[key]:
+        result.append([cache[key], secondNum])
+  return result
+print(findAllUniqueSums1([3,5,300,1,7,4,-18,2,10,-5,23,11], 5))
+
+# 26
+def getMaxLastIdx(str,a,b):
+  maxAIdx = -1
+  maxBIdx = -1
+  for i in range(len(str)):
+    char = str[i]
+    if char == a:
+      maxAIdx = i
+    if char == b:
+      maxBIdx = i
+  if maxAIdx > maxBIdx:
+    return maxAIdx
+  elif maxAIdx < maxBIdx:
+    return maxBIdx
+  elif maxAIdx == maxBIdx:
+    return maxAIdx
+print(getMaxLastIdx('abbaaoccccc', 'g', 'g'))
+print(getMaxLastIdx('abbaaoccccc', 'y', 'a'))
+print(getMaxLastIdx('abbaaoccccc', 'a', 'b'))
+
+# 27
