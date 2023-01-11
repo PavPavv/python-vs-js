@@ -321,3 +321,84 @@ print(getMaxLastIdx('abbaaoccccc', 'y', 'a'))
 print(getMaxLastIdx('abbaaoccccc', 'a', 'b'))
 
 # 27
+def compare(a,b):
+  if isinstance(a,str) is False and isinstance(b,str) is True:
+    return b
+  if isinstance(b,str) is False and isinstance(a,str) is True:
+    return a
+
+  isBothStr = isinstance(a,str) and isinstance(b,str)
+  if isBothStr:
+    for i in range(len(a)):
+      if i < len(b):
+        if a[i].lower() < b[i].lower():
+          return a
+        elif a[i].lower() > b[i].lower():
+          return b
+        else:
+          continue
+      else:
+        return b
+    if len(a) == len(b):
+      return a + " = " + b
+    else:
+      return a
+  print('Both arguments must be a string')
+  return
+
+print('-1, 30')
+print(compare(-1, 30)); #  error
+print("------------------------------------")
+
+print("-1, 'c'")
+print(compare(-1, 'c')); #  'c
+print("------------------------------------")
+
+print("'', ''")
+print(compare('', '')); #  ''
+print("------------------------------------")
+
+print("'', 'a'")
+print(compare('', 'a'));  #  a
+print("------------------------------------")
+
+print("'a', ''")
+print(compare('a', ''));  #  'a'
+print("------------------------------------")
+
+print("'ab', 'a'")
+print(compare('ab', 'a'));  #  'a'
+print("------------------------------------")
+
+print("'banana', 'avocado'")
+print(compare('banana', 'avocado'));  #  avocado
+print("------------------------------------")
+
+print("'Banana', 'Avocado'")
+print(compare('Banana', 'Avocado'));  #  Avocado
+print("------------------------------------")
+
+print("'banana', 'Avocado'")
+print(compare('banana', 'Avocado'));  #  Avocado
+print("------------------------------------")
+
+print("'ooooo', 'oo'")
+print(compare('ooooo', 'oo'));  #  oo
+print("------------------------------------")
+
+print("'oo', 'oooooo'")
+print(compare('oo', 'oooooo')); #  oooooo
+print("------------------------------------")
+
+print("'oz', 'oooooo'")
+print(compare('oz', 'oooooo')); #  oooooo
+print("------------------------------------")
+
+print("'oooooo', 'oooooZ'")
+print(compare('oooooo', 'oooooZ')); #  oooooo
+print("------------------------------------")
+
+print("'ooo', 'ooo'")
+print(compare('ooo', 'ooo')); #  ooo
+print("------------------------------------")
+
