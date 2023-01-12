@@ -402,3 +402,37 @@ print("'ooo', 'ooo'")
 print(compare('ooo', 'ooo')); #  ooo
 print("------------------------------------")
 
+# 27
+def findBlackSheep(arr):
+  evencounter = 0
+  oddcounter = 0
+  lasteven = -1
+  lastodd = -1
+
+  for i in range(len(arr)):
+    el = arr[i]
+    if el % 2 == 0:
+      evencounter += 1
+      lasteven = el
+    else:
+      oddcounter += 1
+      lastodd = el
+
+  if evencounter+oddcounter > 3:
+    if oddcounter > 1:
+      return lasteven
+    else:
+      return lastodd
+  else:
+    return -1
+
+print(findBlackSheep([2,4,6,8,9,10,12])) #  ([2,4,6,8,9,10,12]) -> 9
+
+# 28
+def reversestr(s):
+  res = ""
+  for char in s[::-1]:
+    res += char
+  return res
+print(reversestr('test'))
+
