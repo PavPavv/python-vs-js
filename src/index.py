@@ -1,4 +1,5 @@
 import re
+import time
 
 # 1
 def firstLeft(arr,target):
@@ -436,3 +437,38 @@ def reversestr(s):
   return res
 print(reversestr('test'))
 
+# 29
+def expression(num, operation):
+  if operation:
+    return operation(num)
+  return num
+
+def plus(x):
+  return lambda y: x + y
+
+def minus(x):
+  return lambda y: y - x
+
+def seven(operation):
+  return expression(7, operation)
+
+def five(operation):
+  return expression(5, operation)
+
+def three():
+  return 3
+print( five(plus(seven(minus(three())))) )
+
+# 30
+
+def periodoutput(interval):
+  counter = interval
+  if counter <= 10:
+    print(counter)
+    counter +=1
+    time.sleep(counter)
+    periodoutput(counter)
+  else:
+    return  
+
+periodoutput(1)
