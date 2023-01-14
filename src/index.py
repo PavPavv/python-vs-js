@@ -472,3 +472,45 @@ def periodoutput(interval):
     return  
 
 periodoutput(1)
+
+# 31
+def babySharkLyrics():
+  d="doo "*5+"doo"
+  s=[
+    'Baby shark',
+    'Mommy shark',
+    'Daddy shark',
+    'Grandma shark',
+    'Grandpa shark',
+    'Let\'s go hunt',
+  ]
+  res=""
+  for m in s:
+    l=m+", "+d+"\n"
+    i=0
+    while i<3:
+      res += l
+      i+=1
+    res+=m+"!"+"\n"
+  res+="Run away,..."
+  return res
+print(babySharkLyrics())
+
+# 32
+def convertstr(str):
+  word = str.lower()
+  hashTable = {}
+  res = ""
+  for char in word:
+    if char in hashTable:
+      hashTable[char] += 1
+    else:
+      hashTable[char] = 1
+  for char in word:
+    if hashTable[char] > 1:
+      res += ")"
+    else:
+      res += "("
+  return res
+print(')()))()))))()(')
+print(convertStr("Supralapsarian"))
