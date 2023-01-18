@@ -514,3 +514,28 @@ def convertstr(str):
   return res
 print(')()))()))))()(')
 print(convertStr("Supralapsarian"))
+
+# 33
+def makediatond(n):
+  if n % 2 == 0 or n < 1:
+    return None
+  d = ""
+  t = int(n/2+1)
+  b = int(n/2-1)
+  print(t)
+  for x in range(t):
+    d += " " * (n - x) +  "*" * (2*x + 1) + "\n"
+  for x in range(b, -1, -1):
+    d += " " * (n - x) + "*" * (2*x + 1) + "\n"
+  return d
+
+print(makediatond(-2))
+print(makediatond(0))
+print(makediatond(1))
+print(makediatond(2))
+print(makediatond(3))
+print(makediatond(4))
+print(makediatond(5))
+print(makediatond(9))
+
+# 34
