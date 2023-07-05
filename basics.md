@@ -2,26 +2,26 @@
 
 ## Data types
 
-ES6
+ES6 (8 types)
 
 ```javascript
 //  Primitive types
-let a = 1;  //  number
-a = 'a';  //  string
+let a = 1; //  number
+a = 'a'; //  string
 a = true; //  boolean
 a = undefined; // undefined
 a = null; //  null
-a = BigInt(9007199254740991);  // BigInt
-const b = Symbol('foo');  //  Symbol
+a = BigInt(9007199254740991); // BigInt
+const b = Symbol('foo'); //  Symbol
 
 //  Reference type
 const c = {}; //  object
 const c = []; //  object
 const c = new Set(); //  object
-const b = function(){}  //  function
+const b = function () {}; //  function
 ```
 
-Python3
+Python3 (15 types)
 
 ```python
 a = 'Hi'  # str
@@ -45,7 +45,7 @@ ES6
 
 ```javascript
 const a = 'Hi!';
-typeof a;  // string
+typeof a; // string
 ```
 
 Python3
@@ -61,17 +61,17 @@ ES6
 
 ```javascript
 const a = '1';
-const b = Number(a);  // 'a'
+const b = Number(a); // 'a'
 ```
 
 ```javascript
 const a = 1;
-const b = String(a);  // 'a'
+const b = String(a); // 'a'
 ```
 
 ```javascript
 const a = 1;
-const b = Boolean(a);  // true
+const b = Boolean(a); // true
 ```
 
 Python3
@@ -135,7 +135,7 @@ ES6
 
 ```javascript
 const s = 'Text';
-console.log(s[0]) //  'T'
+console.log(s[0]); //  'T'
 ```
 
 Python3
@@ -233,7 +233,7 @@ ES6
 
 ```javascript
 const s = 'hello!';
-console.log(s.slice(2,5));
+console.log(s.slice(2, 5));
 ```
 
 Python3
@@ -363,13 +363,13 @@ To insert characters into str in Python use an escape character. An escape chara
 ES6
 
 ```javascript
-console.log(Boolean(undefined));  //  false
-console.log(Boolean(null));  //  false
-console.log(Boolean(0));  //  false
-console.log(Boolean(-0));  //  false
-console.log(Boolean(''));  //  false
-console.log(Boolean(NaN));  //  false
-console.log(Boolean(false));  //  false
+console.log(Boolean(undefined)); //  false
+console.log(Boolean(null)); //  false
+console.log(Boolean(0)); //  false
+console.log(Boolean(-0)); //  false
+console.log(Boolean('')); //  false
+console.log(Boolean(NaN)); //  false
+console.log(Boolean(false)); //  false
 ```
 
 Python3
@@ -424,7 +424,7 @@ arr1 = list(("apple", "banana", "cherry")) # note the double round-brackets
 ES6
 
 ```javascript
-const arr = [1,2,3];
+const arr = [1, 2, 3];
 console.log(arr.length);
 ```
 
@@ -440,8 +440,8 @@ print(len(arr))
 ES6
 
 ```javascript
-const arr = [1,2,3,4,5];
-console.log(arr.slice(3,5));  //  [4,5]
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.slice(3, 5)); //  [4,5]
 ```
 
 Python3
@@ -456,8 +456,17 @@ print(arr[3:5]) # [4,5]
 ES6
 
 ```javascript
-const arr = ['Atalanta', 'Torino', 'Inter', 'Verona', 'Genoa', 'Wolfsburg', 'Herta', 'Fiorentina'];
-arr.splice(5,2, 'Milan', 'Juventus');
+const arr = [
+  'Atalanta',
+  'Torino',
+  'Inter',
+  'Verona',
+  'Genoa',
+  'Wolfsburg',
+  'Herta',
+  'Fiorentina',
+];
+arr.splice(5, 2, 'Milan', 'Juventus');
 console.log(arr);
 ```
 
@@ -474,7 +483,7 @@ print(arr)
 ES6
 
 ```javascript
-const arr = [1,2,3];
+const arr = [1, 2, 3];
 
 arr.unshift();
 arr.shift();
@@ -502,7 +511,7 @@ The **del** keyword also removes the specified index. The **del** keyword can al
 
 ```python
 arr = ["apple", "banana", "cherry"]
-del arr 
+del arr
 ```
 
 ```python
@@ -526,9 +535,9 @@ print(arr2)
 ES6
 
 ```javascript
-const arr = [3,4,10,1,0];
-console.log(arr.sort((a,b) => a-b));
-console.log(arr.sort((a,b) => b-a));
+const arr = [3, 4, 10, 1, 0];
+console.log(arr.sort((a, b) => a - b));
+console.log(arr.sort((a, b) => b - a));
 ```
 
 Python3
@@ -569,14 +578,14 @@ print(thislist)
 ES6
 
 ```javascript
-const arr = [3,4,10,1,0];
+const arr = [3, 4, 10, 1, 0];
 const arr1 = arr;
 const arr2 = arr.slice();
 arr.pop();
 arr.pop();
 arr.pop();
 arr.pop();
-console.log({ arr, arr1, arr2 });  //  { arr: [3], arr1: [3], arr2: [3,4,10,1,0] }
+console.log({ arr, arr1, arr2 }); //  { arr: [3], arr1: [3], arr2: [3,4,10,1,0] }
 ```
 
 Python3
@@ -595,14 +604,14 @@ print(arr1)  #  [3,4,10,1,0]
 ES6
 
 ```javascript
-const arr = [1,2,3];
+const arr = [1, 2, 3];
 for (let i = 0; i < arr.length; i++) {
   console.log(arr[i]);
 }
 ```
 
 ```javascript
-const arr = [1,2,3];
+const arr = [1, 2, 3];
 for (const el of arr) {
   console.log(el);
 }
@@ -664,7 +673,7 @@ t[2:4]  # 'c',True
 # To determine if a specified item is present in a tuple use the in keyword:
 thistuple = ("apple", "banana", "cherry")
 if "apple" in thistuple:
-  print("Yes, 'apple' is in the fruits tuple") 
+  print("Yes, 'apple' is in the fruits tuple")
 
 # But there is a workaround. You can convert the tuple into a list, change the list, and convert the list back into a tuple.
 x = ("apple", "banana", "cherry")
@@ -685,7 +694,7 @@ The **del** keyword can delete the tuple completely:
 ```python
 thistuple = ("apple", "banana", "cherry")
 del thistuple
-print(thistuple) #this will raise an error because the tuple no longer exists 
+print(thistuple) #this will raise an error because the tuple no longer exists
 ```
 
 In Python, we are also allowed to extract the values back into variables. This is called "unpacking":
@@ -695,7 +704,7 @@ fruits = ("apple", "banana", "cherry")
 (green, yellow, red) = fruits
 ```
 
-If the number of variables is less than the number of values, you can add an * to the variable name and the values will be assigned to the variable as a list:
+If the number of variables is less than the number of values, you can add an \* to the variable name and the values will be assigned to the variable as a list:
 
 ```python
  fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
@@ -705,7 +714,7 @@ print(yellow)
 print(red)
 ```
 
-If you want to multiply the content of a tuple a given number of times, you can use the * operator:
+If you want to multiply the content of a tuple a given number of times, you can use the \* operator:
 
 ```python
 fruits = ("apple", "banana", "cherry")
@@ -783,7 +792,7 @@ x.symmetric_difference_update(y)
 
 ## Functions
 
-In Python a function is defined using the **def** keyword. To call a function, use the function name followed by parenthesis. If you do not know how many arguments that will be passed into your function, add a * before the parameter name in the function definition.
+In Python a function is defined using the **def** keyword. To call a function, use the function name followed by parenthesis. If you do not know how many arguments that will be passed into your function, add a \* before the parameter name in the function definition.
 
 ```python
 def my_function(*kids):
@@ -791,7 +800,7 @@ def my_function(*kids):
 my_function("Emil", "Tobias", "Linus")
 ```
 
-If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ** before the parameter name in the function definition. This way the function will receive a dictionary of arguments, and can access the items accordingly:
+If you do not know how many keyword arguments that will be passed into your function, add two asterisk: \*\* before the parameter name in the function definition. This way the function will receive a dictionary of arguments, and can access the items accordingly:
 
 ```python
 def my_function(**kid):
@@ -828,7 +837,7 @@ print(mytripler(11))
 
 ## Dictionaries
 
-Dictionaries are used to store data values in key:value pairs. A dictionary is a collection which is ordered*, changeable and do not allow duplicates. The values in dictionary items can be of any data type.
+Dictionaries are used to store data values in key:value pairs. A dictionary is a collection which is ordered\*, changeable and do not allow duplicates. The values in dictionary items can be of any data type.
 
 ```python
 thisdict = {

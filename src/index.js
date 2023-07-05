@@ -6,7 +6,7 @@
  * @param {number} target
  * @return {number}
  * f([1,2,3,1,2,3],3) -> 2
-*/
+ */
 function findFirstLeft(array, target) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] === target) return i;
@@ -19,9 +19,9 @@ function findFirstLeft(array, target) {
 /**
  * @param {number} array
  * @param {number} target
- * @return {number} 
+ * @return {number}
  * f([1,2,3,1,2,3],3) -> 5
-*/
+ */
 
 function findFirstRight(array, target) {
   let counter = -1;
@@ -37,11 +37,11 @@ function findFirstRight(array, target) {
  * @param {string} str
  * @return {boolean}
  * f('ana') -> true
-*/
-function isPalindrome (str) {
+ */
+function isPalindrome(str) {
   str = str.toLowerCase();
-  return str === str.split("").reverse().join("");
-};
+  return str === str.split('').reverse().join('');
+}
 // console.log(isPalindrome('ana')); // true
 
 // 4
@@ -50,7 +50,7 @@ function isPalindrome (str) {
  * @param {number} target
  * @return {string[]}
  * f(["Mark", "John", "Anna", "Maria"]) -> ["Mark", "John", "Anna"]
-*/
+ */
 function findByParam(arr, target) {
   return arr.filter((elem) => elem.length === target);
 }
@@ -61,9 +61,9 @@ function findByParam(arr, target) {
  * @param {string} word
  * @return {number}
  * f('wolf') -> 1
-*/
+ */
 function vowelsCounter(word) {
-  const VOWELS = ['a','e','i','o','u'];
+  const VOWELS = ['a', 'e', 'i', 'o', 'u'];
   let counter = 0;
   for (let i = 0; i < word.length; i++) {
     if (VOWELS.includes(word[i])) counter++;
@@ -84,8 +84,8 @@ console.log(vowelsCounter1('wolf'));
  * @param {number} b
  * @return {number}
  * f(1,5) -> 15
-*/
-function getSumOfTwoNumsRange(a,b) {
+ */
+function getSumOfTwoNumsRange(a, b) {
   const start = a > b ? b : a;
   const end = a > b ? a : b;
   let counter = 0;
@@ -101,7 +101,7 @@ function getSumOfTwoNumsRange(a,b) {
  * @param {string} str
  * @return {string}
  * f('testing') -> 't'
-*/
+ */
 function findMiddle(str) {
   const isEven = str.length % 2 === 0 ? true : false;
   const oddMiddle = str[(str.length - 1) / 2];
@@ -116,13 +116,13 @@ function findMiddle(str) {
  * @param {number} num
  * @return {number}
  * f(25) -> 425 (4+25)
-*/
+ */
 const squareDigits = (num) => {
   return +num
     .toString()
     .split('')
-    .map(n => n * n)
-    .join('')
+    .map((n) => n * n)
+    .join('');
 };
 // console.log(squareDigits(25));
 
@@ -131,10 +131,10 @@ const squareDigits = (num) => {
  * @param {string} str
  * @return {string}
  * f('Hell#o!') -> 'Hello!'
-*/
+ */
 const removeChar = (str, target) => {
   const targetRegex = new RegExp(target, 'gi');
-  return str.replace(targetRegex,'');
+  return str.replace(targetRegex, '');
 };
 // console.log(removeChar('Hell#o!', '#'));
 
@@ -143,7 +143,7 @@ const removeChar = (str, target) => {
  * @param {number[]} arr
  * @return {boolean}
  * f([2,4,5,1,3,3,7,8,9,10,300]) -> true
-*/
+ */
 function isRepeat(arr) {
   if (Array.isArray(arr)) {
     for (let i = 1; i < arr.length; i++) {
@@ -163,7 +163,7 @@ function isRepeat(arr) {
  * @param {number[]} arr
  * @return {boolean}
  * f([1,2,3,4,5,6,7,8,3,9]) -> [3,3]
-*/
+ */
 function findRepeat(arr) {
   var result = [];
   for (var i = 0; i < arr.length; i++) {
@@ -185,19 +185,19 @@ function findRepeat1(arr) {
   }
   for (const n of arr) {
     if (arr.indexOf(n) !== obj[n]) {
-      result.push(n)
+      result.push(n);
     }
   }
   return result;
 }
-console.log(findRepeat1([1,2,3,4,5,6,7,8,3,9]));
+console.log(findRepeat1([1, 2, 3, 4, 5, 6, 7, 8, 3, 9]));
 
 // 12
 /**
  * @param {number[]} arr
  * @return {boolean}
  * f([1,2,3,4,5,6,7,8,3,9]) -> [3,3]
-*/
+ */
 function findRepeats(arr) {
   const result = [];
   const cache = {};
@@ -249,11 +249,11 @@ function findRepeats(arr) {
  * @param {number} target
  * @return {number}
  * f([0,0,0,0,1,2,3,4,5,6,0,], 1, 5, 0) -> 3
-*/
-var nums = [0,0,0,0,1,2,3,4,5,6,0,0];
-function halfIntervalTargetCounter(arr, l ,r, target) {
+ */
+var nums = [0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 0, 0];
+function halfIntervalTargetCounter(arr, l, r, target) {
   var counter = 0;
-  for (var i = l; i < r; i ++) {
+  for (var i = l; i < r; i++) {
     if (arr[i] === target) counter++;
   }
   return counter;
@@ -266,8 +266,8 @@ function halfIntervalTargetCounter(arr, l ,r, target) {
  * @return {boolean}
  * f([2,3,5,1,6,7,8,10,100], 5) -> true
  * f([2,3,5,1,6,7,8,10,100], 1000) -> false
-*/
-const nums = [2,3,5,1,6,7,8,10,100];
+ */
+const nums = [2, 3, 5, 1, 6, 7, 8, 10, 100];
 function isHaveSum(arr, target) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length; j++) {
@@ -281,27 +281,27 @@ function isHaveSum(arr, target) {
 
 // 16
 /**
-* @param {string}
-* @param {number}
-* @param {number}
-* ...
-* @return {string}
-*...
-* func('!', 4, -10, 34, 0) -> '!4!-10!34!0'
-*/
+ * @param {string}
+ * @param {number}
+ * @param {number}
+ * ...
+ * @return {string}
+ *...
+ * func('!', 4, -10, 34, 0) -> '!4!-10!34!0'
+ */
 function withSeparator(...rest) {
   const [separator, ...values] = rest;
   return separator + values.join(separator);
-};
+}
 // console.log(withSeparator('!', 4, -10, 34, 0));
 
 // 17
 /**
-* @param {object}
-* @return {boolean}
-*...
-* func({}) -> true
-*/
+ * @param {object}
+ * @return {boolean}
+ *...
+ * func({}) -> true
+ */
 function isEmptyObj(obj) {
   return Object.keys(obj).length > 0 ? false : true;
 }
@@ -319,14 +319,14 @@ function isEmptyObj1(obj) {
 
 // 18
 /**
-* @param {number[]}
-* @return {number}
-*...
-* func([3,5,2,1,3,7,66,8,9,4,100,45]) -> 100
-*/
+ * @param {number[]}
+ * @return {number}
+ *...
+ * func([3,5,2,1,3,7,66,8,9,4,100,45]) -> 100
+ */
 function findMax(arr) {
   let max = 0;
-  for (let i= 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max) {
       max = arr[i];
     }
@@ -337,11 +337,11 @@ function findMax(arr) {
 
 // 19
 /**
-* @param {string[]}
-* @return {string}
-*...
-* func(['ab', 'a', 'abc']) -> a
-*/
+ * @param {string[]}
+ * @return {string}
+ *...
+ * func(['ab', 'a', 'abc']) -> a
+ */
 const wordsArr = ['kryliaSovetov', 'zenit', 'spartak'];
 function getShortestStrFromArr(arr) {
   let min = arr[0];
@@ -374,11 +374,11 @@ function getShortestStrFromArr1(arr) {
 
 // 20
 /**
-* @param {number}
-* @return {void}
-*...
-* func(1) -> 1...,2...,3...,4...,5...,6...,7...,8...,9...,10....
-*/
+ * @param {number}
+ * @return {void}
+ *...
+ * func(1) -> 1...,2...,3...,4...,5...,6...,7...,8...,9...,10....
+ */
 function periodOutput(interval) {
   let counter = 1;
   setInterval(() => {
@@ -395,7 +395,7 @@ function periodOutput(interval) {
 /**
  * @param {number[]} arr
  * @param {number} target
- * @return {number[]} 
+ * @return {number[]}
  * func([1,2,3,4,5,6], 6) -> [[1,5], [2,4]];
  */
 function findSum(arr, target) {
@@ -433,7 +433,7 @@ function findSum1(arr, target) {
  * @param {string[]} str
  * @return {string[][]}
  * f(['ana', 'nan', 'pie', 'cort', 'iep']) -> [['ana', 'nan], ['pie', 'iep']]
-*/
+ */
 function groupAnagrams(arr) {
   const temp = [];
   const result = [];
@@ -454,7 +454,7 @@ function groupAnagrams(arr) {
   }
   return result;
 }
-console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))  // [["ate","eat","tea"], ["nat","tan"], ["bat"]]
+console.log(groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat'])); // [["ate","eat","tea"], ["nat","tan"], ["bat"]]
 
 function groupAnagrams1(arr) {
   const map = new Map();
@@ -468,7 +468,7 @@ function groupAnagrams1(arr) {
 }
 // console.log(groupAnagrams1(["eat","tea","tan","ate","nat","bat"])) // [["bat"],["nat","tan"],["ate","eat","tea"]]
 
- function groupAnagrams2(arr) {
+function groupAnagrams2(arr) {
   const hash = {};
   for (let i = 0; i < arr.length; i++) {
     const sorted = arr[i].toLowerCase().split('').sort().join('').trim();
@@ -487,7 +487,7 @@ function groupAnagrams1(arr) {
  * @param {string} str
  * @return {number}
  * f('ababa') -> 'a'
-*/
+ */
 function popularSymbol(str) {
   let newStr = str.replace(/\s/g, '');
   let ans = '';
@@ -531,7 +531,7 @@ function popularSymbolObj1(str) {
  * @param {number[]} arr
  * @return {number[]}
  * f([10,-2,1,2,3,4,5]) -> [10,5]
-*/
+ */
 function findTwoMax(arr) {
   let max1 = Math.max(arr[0], arr[1]);
   let max2 = Math.min(arr[0], arr[1]);
@@ -552,7 +552,7 @@ function findTwoMax(arr) {
  * @param {number[]} arr
  * @return {number}
  * f([10,-2,1,2,3,4,5]) -> -2
-*/
+ */
 function findMinEven(arr) {
   let flag = false;
   let result = arr[0];
@@ -567,7 +567,7 @@ function findMinEven(arr) {
 // console.log(findMinEven([10,-2,1,2,3,4,5])) //  -2
 
 function findMinEven1(array) {
-  const sorted = array.sort((a,b) => a-b);
+  const sorted = array.sort((a, b) => a - b);
   for (let i = 0; i < sorted.length; i++) {
     if (sorted[i] % 2 === 0) {
       return sorted[i];
@@ -591,7 +591,7 @@ function findMinEven2(array) {
 function findMinEven3(arr) {
   return Math.min(...arr.filter((el) => el % 2 === 0));
 }
-console.log(findMinEven3([10,-2,1,2,3,4,5])) //  -2
+console.log(findMinEven3([10, -2, 1, 2, 3, 4, 5])); //  -2
 
 // 26
 const counter = (num) => {
@@ -608,7 +608,7 @@ const counter1 = (function () {
   let counter = 0;
   return function () {
     return counter++;
-  }
+  };
 })();
 counter1();
 counter1();
@@ -617,9 +617,9 @@ counter1();
 
 function counterF(num) {
   var counter = num || 0;
-  return function() {
+  return function () {
     return counter++;
-  }
+  };
 }
 var count = counterF(100);
 count();
@@ -632,19 +632,21 @@ count();
  * @param {string} str
  * @return {string}
  * f('AABBBCCCCDDDDDE') -> 'A2B3C4D5E1'
-*/
+ */
 const charCount = (str) => {
   const sortedStr = str.split('').sort().join('');
   const hashTable = {};
   let result = '';
   for (let i = 0; i < sortedStr.length; i++) {
-    hashTable[sortedStr[i]] = hashTable[sortedStr[i]] ? hashTable[sortedStr[i]] + 1 : 1;
+    hashTable[sortedStr[i]] = hashTable[sortedStr[i]]
+      ? hashTable[sortedStr[i]] + 1
+      : 1;
   }
   for (const char in hashTable) {
-    result += `${char}${hashTable[char]}`
+    result += `${char}${hashTable[char]}`;
   }
   return result;
-}
+};
 // console.log(charCount('BBBAADDDDDECCCC'));  //  'A2B3C4D5E1'
 
 // 28
@@ -652,11 +654,11 @@ const charCount = (str) => {
  * @param {number} num
  * @return {number}
  * f(9) -> 34
-*/
+ */
 function fib(num) {
   if (num < 2) return num;
   return fib(num - 1) + fib(num - 2);
-};
+}
 // console.log(fib(9));  //  34
 
 function fib1(num) {
@@ -667,30 +669,30 @@ function fib1(num) {
     result.push(prev1 + prev2);
   }
   return result[num];
-};
+}
 // console.log(fib1(9));  //  34
 
 // 29
 /**
  * @param {number[]} arr
  * @param {number} target
- * @return {number[]} 
+ * @return {number[]}
  * func([1,2,3,4,5,6], 6) -> [[1,5], [2,4]];
  */
 function findAllUniqueSums(arr, target) {
   var result = [];
   for (var i = 0; i < arr.length; i++) {
     for (var j = 1; j < arr.length; j++) {
-      if (arr[i]+arr[j] === target) {
+      if (arr[i] + arr[j] === target) {
         if (arr[i] > arr[j]) {
-          result.push([arr[i],arr[j]]);
+          result.push([arr[i], arr[j]]);
         }
       }
     }
   }
   return result;
 }
-console.log(findAllUniqueSums([3,5,300,1,7,4,-18,2,10,-5,23,11], 5));
+console.log(findAllUniqueSums([3, 5, 300, 1, 7, 4, -18, 2, 10, -5, 23, 11], 5));
 
 function findAllUniqueSums1(arr, target) {
   var result = [];
@@ -698,16 +700,18 @@ function findAllUniqueSums1(arr, target) {
   for (var i = 0; i < arr.length; i++) {
     obj[arr[i]] = arr[i];
   }
-  console.log(obj)
+  console.log(obj);
   for (var num in obj) {
     var secondNum = target - num;
     if (obj[secondNum] && secondNum > num) {
-      result.push([obj[secondNum],obj[num]]);
+      result.push([obj[secondNum], obj[num]]);
     }
   }
   return result;
 }
-console.log(findAllUniqueSums1([3,5,300,1,7,4,-18,2,10,-5,23,11], 5));
+console.log(
+  findAllUniqueSums1([3, 5, 300, 1, 7, 4, -18, 2, 10, -5, 23, 11], 5),
+);
 
 // 30
 /**
@@ -716,14 +720,11 @@ console.log(findAllUniqueSums1([3,5,300,1,7,4,-18,2,10,-5,23,11], 5));
  * @param {string} b
  * @return {number}
  * f('abbaao', 'a', 'b') -> 4
-*/
+ */
 function getLatestCharIdx(str, a, b) {
   if (str) {
     if (!a && !b) return -1;
-    return Math.max(
-      a ? str.lastIndexOf(a) : -1,
-      b ? str.lastIndexOf(b) : -1
-    );
+    return Math.max(a ? str.lastIndexOf(a) : -1, b ? str.lastIndexOf(b) : -1);
   }
   return -1;
 }
@@ -748,7 +749,7 @@ function getLatestCharIdx1(s, a, b) {
     }
   }
   return -1;
-};
+}
 // console.log(getLatestCharIdx1('aba', 'a', 'b'));  //  2
 // console.log(getLatestCharIdx1('', 'g', 'o'));   //  -1
 // console.log(getLatestCharIdx1('google', 'x', 'o')); //  2
@@ -761,7 +762,7 @@ function getLatestCharIdx1(s, a, b) {
  * @param {string} b
  * @return {string}
  * f('banana', 'avocado') -> 'avocado'
-*/
+ */
 function compare(a, b) {
   if (typeof a !== 'string' || typeof b !== 'string') {
     return 'Type error';
@@ -774,7 +775,7 @@ function compare(a, b) {
   for (let i = 0; i < loweredA.length; i++) {
     const charCodeA = loweredA[i] ? loweredA[i].charCodeAt() : -1;
     const charCodeB = loweredB[i] ? loweredB[i].charCodeAt() : -1;
-      if (charCodeA < charCodeB) return a;
+    if (charCodeA < charCodeB) return a;
     if (charCodeA > charCodeB) return b;
     if (charCodeA === charCodeB) {
       if (loweredA.length > loweredB.length) {
@@ -782,19 +783,19 @@ function compare(a, b) {
           return b;
         } else {
           continue;
-        };
+        }
       } else if (loweredA.length < loweredB.length) {
         if (loweredA[loweredA.length - 1] === loweredB[i]) {
           return a;
         } else {
           continue;
-        };
+        }
       } else {
         return a;
       }
     }
   }
-};
+}
 // console.log(compare(-1, 30)); //  Type error
 // console.log(compare('', '')); // The strings are empty
 // console.log(compare('', 'a'));  //  a
@@ -808,7 +809,7 @@ function compare(a, b) {
 // console.log(compare('oooooo', 'oooooZ')); //  oooooo
 // console.log(compare('ooo', 'ooo')); //  ooo
 
-function compare1(a,b) {
+function compare1(a, b) {
   if (typeof a !== 'string' || typeof b !== 'string') {
     console.error('Both arguments must be a string');
     return;
@@ -826,7 +827,7 @@ function compare1(a,b) {
       return b;
     }
   }
-  return a.length === b.length ? a + " = " + b : a;
+  return a.length === b.length ? a + ' = ' + b : a;
 }
 // console.log(compare1(-1, 30)); //  Type error
 // console.log(compare1('', '')); //  ''
@@ -859,22 +860,22 @@ function compare2(str1, str2) {
 // console.log(compare2('oooooo', 'oooooZ')); //oooooo
 // console.log(compare2('ooo', 'ooo')); //ooo
 
-function compare3(a,b) {
+function compare3(a, b) {
   if (typeof a !== 'string' || typeof b !== 'string') {
-    return 'Both arguments must be a string'
+    return 'Both arguments must be a string';
   }
   if (!a) return b;
   if (!b) return a;
   var result = a.localeCompare(b);
-  switch(result) {
+  switch (result) {
     case 1:
       return b;
     case 0:
-      return a + " = " + b;
+      return a + ' = ' + b;
     case -1:
       return a;
     default:
-      return result;  
+      return result;
   }
 }
 // console.log(compare3(-1, 30)); //  Type error
@@ -893,144 +894,146 @@ function compare3(a,b) {
 // 32
 /**
  * 'Hello'.repeating(3) -> 'Hello Hello Hello'
-*/
-String.prototype.repeating = function(num) {
-  return new Array(num).fill(this).join(" ");
+ */
+String.prototype.repeating = function (num) {
+  return new Array(num).fill(this).join(' ');
 };
 'Hello'.repeating(3);
 
-String.prototype.repeating = function(num) {
-  return this + " ".repeat(num);
+String.prototype.repeating = function (num) {
+  return this + ' '.repeat(num);
 };
 'Hello'.repeating(3);
 
 // 33
-Function.prototype.myBind = function(thisObj) {
+Function.prototype.myBind = function (thisObj) {
   var self = this;
-  return function() {
+  return function () {
     self.call(thisObj);
-  }
+  };
 };
 var test = someFn.myBind(someObj);
 
 // 34
-Array.prototype.myForEach = function(cb) {
+Array.prototype.myForEach = function (cb) {
   for (var i = 0; i < this.length; i++) {
-    cb(this[i],i,this);
+    cb(this[i], i, this);
   }
 };
-[1,2,3].myForEach(function(el) { console.log(el) })
+[1, 2, 3].myForEach(function (el) {
+  console.log(el);
+});
 
 // 35
-String.prototype.reverse = function() {
+String.prototype.reverse = function () {
   var result = '';
-  var i = 0
+  var i = 0;
   while (i < this.length) {
     i++;
     result += this[this.length - i];
   }
   return result;
-}
+};
 // console.log('test'.reverse()) //  'tset'
 
 // 36
-  //  1 __proto__:
-  const obj1 = {
-    name: 'Jack',
-  };
-  const obj2 = {};
-  obj2.__proto__ = obj1;
-  console.log(obj2.name)  //  'Jack'
+//  1 __proto__:
+const obj1 = {
+  name: 'Jack',
+};
+const obj2 = {};
+obj2.__proto__ = obj1;
+console.log(obj2.name); //  'Jack'
 
-  // 2  Object.create:
-  const obj1a = {
-    name: 'Jack',
-  };
-  const obj2a = Object.create(obj1a);
-  // console.log(obj2a.name)  //  'Jack'
+// 2  Object.create:
+const obj1a = {
+  name: 'Jack',
+};
+const obj2a = Object.create(obj1a);
+// console.log(obj2a.name)  //  'Jack'
 
-  // 3  setPrototypeOf
-  const obj1b = {
-    name: 'Jack',
-  };
-  const obj2b = {};
-  Object.setPrototypeOf(obj2b, obj1b);
-  // console.log(obj2b.name)  //  'Jack'
+// 3  setPrototypeOf
+const obj1b = {
+  name: 'Jack',
+};
+const obj2b = {};
+Object.setPrototypeOf(obj2b, obj1b);
+// console.log(obj2b.name)  //  'Jack'
 
-  // 4  function-constructor with prototype (creating new object with given "this"):
-  //  Animal
-  function Animal(kind) {
+// 4  function-constructor with prototype (creating new object with given "this"):
+//  Animal
+function Animal(kind) {
+  this.kind = kind || 'no kind';
+}
+Animal.prototype.getKind = function () {
+  return this.kind;
+};
+Animal.prototype.setKind = function (k) {
+  this.kind = k;
+};
+//  Dog
+function Dog(name) {
+  this.name = name || 'no name';
+}
+// ES5 sort of inheritance
+Dog.prototype = new Animal();
+Dog.prototype.constructor = Animal;
+Dog.prototype.getName = function () {
+  return this.name;
+};
+var myDog = new Dog('Jack');
+// console.log(myDog.getName());
+myDog.setKind('shepherd');
+// console.log(myDog.getKind());
+
+// 5 ES6 sort of inheritance with classes syntax sugar:
+// Animal
+class Animal {
+  constructor(kind) {
     this.kind = kind || 'no kind';
   }
-  Animal.prototype.getKind = function() {
-    return this.kind;
-  }
-  Animal.prototype.setKind = function(k) {
+  setKind(k) {
     this.kind = k;
   }
-  //  Dog
-  function Dog(name) {
-    this.name = name || 'no name';
+  getKind() {
+    return this.kind;
   }
-  // ES5 sort of inheritance
-  Dog.prototype = new Animal;
-  Dog.prototype.constructor = Animal;
-  Dog.prototype.getName = function() {
+}
+// Dog
+class Dog extends Animal {
+  constructor(name) {
+    super();
+    this.name = name;
+  }
+  setName(n) {
+    this.name = n;
+  }
+  getName() {
     return this.name;
   }
-  var myDog = new Dog('Jack');
-  // console.log(myDog.getName());
-  myDog.setKind('shepherd');
-  // console.log(myDog.getKind());
+}
+const myDoggy = new Dog('Jack');
+myDoggy.setKind('shepherd');
+// console.log(myDoggy.getName());  //  'Jack'
+// console.log(myDoggy.getKind());  //  'shepherd'
 
-  // 5 ES6 sort of inheritance with classes syntax sugar:
-  // Animal
-  class Animal {
-    constructor(kind) {
-      this.kind = kind || 'no kind';
-    }
-    setKind(k) {
-      this.kind = k;
-    }
-    getKind() {
-      return this.kind;
-    }
-  }
-  // Dog
-  class Dog extends Animal {
-    constructor(name) {
-      super();
-      this.name = name;
-    }
-    setName(n) {
-      this.name = n;
-    }
-    getName() {
-      return this.name;
-    }
-  }
-  const myDoggy = new Dog('Jack');
-  myDoggy.setKind('shepherd');
-  // console.log(myDoggy.getName());  //  'Jack'
-  // console.log(myDoggy.getKind());  //  'shepherd'
+// 37
+Object.prototype.myCreate = function (o) {
+  function F() {}
+  F.prototype = o;
+  return new F();
+};
 
-  // 37
-  Object.prototype.myCreate = function(o) {
-    function F() {}
-    F.prototype = o;
-    return new F();
-  }
-
-  // 38
-  /**
+// 38
+/**
  * @param {number[]} arr
  * @return {number}
  * f([2,4,6,8,9,10,12]) -> 9
-*/
+ */
 function findBlackSheep(arr) {
   let oddCounter = 0;
   let evenCounter = 0;
-  let lastOdd = 0
+  let lastOdd = 0;
   let lastEven = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] % 2 === 0) {
@@ -1045,27 +1048,27 @@ function findBlackSheep(arr) {
     if (oddCounter > 1) return lastEven;
     else return lastOdd;
   } else return -1;
-};
-console.log(findBlackSheep([2,4,6,8,9,10,12]))
+}
+console.log(findBlackSheep([2, 4, 6, 8, 9, 10, 12]));
 
 function findBlackShip1(arr) {
-  const binaryArr = arr.map(x => x % 2);
-  const bArrSum = binaryArr.reduce((a,b) => a+b);
+  const binaryArr = arr.map((x) => x % 2);
+  const bArrSum = binaryArr.reduce((a, b) => a + b);
   const target = bArrSum > 1 ? 0 : 1;
   return arr[binaryArr.indexOf(target)];
-};
-console.log(findBlackSheep1([2,4,6,8,9,10,12]))
+}
+console.log(findBlackSheep1([2, 4, 6, 8, 9, 10, 12]));
 
 // 39
 function plus(x) {
-  return function(y) {
+  return function (y) {
     return y + x;
-  }
+  };
 }
 function minus(x) {
-  return function(y) {
+  return function (y) {
     return y - x;
-  }
+  };
 }
 //  key of the algorithm
 function expression(number, operation) {
@@ -1086,11 +1089,11 @@ function seven(operation) {
 
 // 40
 /**
-* @param {number}
-* @return {void}
-*...
-* func(1) -> 1...,2......,3.........,4............,5...............,6..................,7.....................,8........................, ...10...
-*/
+ * @param {number}
+ * @return {void}
+ *...
+ * func(1) -> 1...,2......,3.........,4............,5...............,6..................,7.....................,8........................, ...10...
+ */
 function periodOutput(interval) {
   let counter = interval;
   const tick = 1000 * counter;
@@ -1116,39 +1119,40 @@ function babySharkLyrics() {
     'Daddy shark',
     'Grandma shark',
     'Grandpa shark',
-    'Let\'s go hunt',
+    "Let's go hunt",
   ];
   var res = '';
   for (var m of s) {
-    var l = m + ", " + d + "\n";
+    var l = m + ', ' + d + '\n';
     var i = 0;
-    while(i < 3) {
+    while (i < 3) {
       res += l;
       i++;
     }
-    res += m + "!" + "\n";
+    res += m + '!' + '\n';
   }
-  res += "Run away,…";
-  return res; 
+  res += 'Run away,…';
+  return res;
 }
 // console.log(babySharkLyrics());
-
 
 function babySharkLyrics1() {
   var t = 'shark';
   var s = [
-    'Baby '+t,
-    'Mommy '+t,
-    'Daddy '+t,
-    'Grandma '+t,
-    'Grandpa '+t,
-    'Let\'s go hunt',
+    'Baby ' + t,
+    'Mommy ' + t,
+    'Daddy ' + t,
+    'Grandma ' + t,
+    'Grandpa ' + t,
+    "Let's go hunt",
   ];
   return s
-    .map((l) => (l+", "+"doo ".repeat(5)+"doo"+"\n")
-      .repeat(3)+l+"!"+"\n")
-      .join("")
-      .concat("Run away,…");
+    .map(
+      (l) =>
+        (l + ', ' + 'doo '.repeat(5) + 'doo' + '\n').repeat(3) + l + '!' + '\n',
+    )
+    .join('')
+    .concat('Run away,…');
 }
 // console.log(babySharkLyrics1());
 
@@ -1156,23 +1160,23 @@ function babySharkLyrics1() {
 function convertStr(str) {
   var word = str.toLowerCase();
   var obj = {};
-  var res = "";
+  var res = '';
   for (var i = 0; i < word.length; i++) {
-    obj[word[i]] = obj[word[i]] ? obj[word[i]] + 1 : 1; 
+    obj[word[i]] = obj[word[i]] ? obj[word[i]] + 1 : 1;
   }
   for (var letter of word) {
     if (obj[letter] > 1) {
-      res += ")";
+      res += ')';
     } else {
-      res += "(";
+      res += '(';
     }
   }
   return res;
 }
 // console.log(convertStr('din'))  //  "((("
 // console.log(convertStr('recede'))  //  "()()()"
-console.log(convertStr('Success'))  //  ")())())"
+console.log(convertStr('Success')); //  ")())())"
 // console.log(convertStr('(( @'))  //  "))(("
-console.log(')()))()))))()(', convertStr("Supralapsarian")) // ")()))()))))()("
+console.log(')()))()))))()(', convertStr('Supralapsarian')); // ")()))()))))()("
 // console.log(convertStr('wORO(O)OOIOSOO')) //  '(((((((((((((('
-// console.log('((((((((((((((' , convertStr('uSFSJ(SS)SPxSy')) //  
+// console.log('((((((((((((((' , convertStr('uSFSJ(SS)SPxSy')) //

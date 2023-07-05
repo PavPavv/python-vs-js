@@ -89,7 +89,7 @@ def findRepeat(a):
     if a.index(n) != obj[n]:
       result.append(n)
   return result
-print(findRepeat([1,2,3,4,5,6,7,3,8,9]))
+print(findRepeat([1,2,3,4,5,6,7,3,8,9]))  # 7
 
 # 11
 def findRepeats(a):
