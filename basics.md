@@ -593,6 +593,7 @@ Python3
 ```python
 arr = [3,4,10,1,0]
 arr1 = arr.copy()
+arr2 = arr[:]
 arr.clear()  #  arr = []
 print(arr1)  #  [3,4,10,1,0]
 ```
