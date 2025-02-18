@@ -976,3 +976,14 @@ Python3
 ```python
 from module import moduleMethod
 ```
+
+## I/O
+
+n Python, input/output (I/O) operations can be both synchronous and asynchronous, depending on how you implement them. By default, standard I/O functions in Python (like input(), print(), and file operations) are synchronous. This means that when you call these functions, the program will wait (block) until the operation is completed before moving on to the next line of code. For example, when you call input(), the program halts and waits for user input before proceeding.
+
+Python also supports asynchronous I/O through the asyncio library and asynchronous functions using async and await. This allows for non-blocking operations, where the program can continue executing other tasks while waiting for an I/O operation to complete. For example, if you are dealing with network requests or reading from files where the operations can take time, you might use asynchronous programming to avoid blocking the entire program.
+
+In Node.js, most built-in modules are designed to use asynchronous I/O by default. You can use callbacks or promises to handle the results of asynchronous operations. Note that Node.js uses asynchronous I/O and the standard way to handle user input is often through the readline module.
+
+**I/O in NodeJS are ALWAYS ASYNC!**
+
