@@ -820,7 +820,7 @@ my_function()
 my_function("Brazil")
 ```
 
-## Lambdas
+### Lambdas
 
 A lambda function is a small anonymous function. A lambda function can take any number of arguments, but can only have one expression. Use lambda functions when an anonymous function is required for a short period of time.
 
@@ -835,6 +835,33 @@ def myfunc(n):
 mytripler = myfunc(3)
 print(mytripler(11))
 ```
+
+### *args and **kwargs in Python
+
+In Python, *args and **kwargs are used to allow functions to accept an arbitrary number of arguments. These features provide great flexibility when designing functions that need to handle a varying number of inputs.
+
+```python
+# *args example
+def fun(*args):
+    return sum(args)
+
+print(fun(1, 2, 3, 4)) 
+print(fun(5, 10, 15))   
+
+# **kwargs example
+def fun(**kwargs):
+    for k, val in kwargs.items():
+        print(k, val)
+
+fun(a=1, b=2, c=3)
+```
+
+Output be like:
+10
+30
+a 1
+b 2
+c 3
 
 ## Dictionaries
 
@@ -916,6 +943,24 @@ del thisdict["year"]
 print(thisdict)
 thisdict.clear()
 del thisdict
+```
+
+In Python, dictionary keys do not have to always be strings. They can be of any immutable (hashable) type. Common key types include:
+
+- Strings (str)
+- Integers (int)
+- Tuples (if all elements are hashable)
+- Floats (though using floats as keys can sometimes lead to precision issues)
+- Booleans (bool)
+
+```python
+# Valid dictionary with various key types
+my_dict = {
+    42: "integer key",
+    (1, 2): "tuple key",
+    True: "bool key",
+    3.14: "float key"
+}
 ```
 
 ### Loop Through a Dictionary
